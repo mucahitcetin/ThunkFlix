@@ -8,6 +8,7 @@ import DetailDisplay from "../components/DetailDisplay";
 import millify from "millify";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import ActorCard from "../components/ActorCard";
+import Video from "../components/Video";
 
 const Detail = () => {
   const [movie, setMovie] = useState(null);
@@ -47,14 +48,7 @@ const Detail = () => {
           {/* orta */}
           <section className="my-10 grid grid-cols-1 md:grid-cols-2">
             <div>
-              <DetailDisplay
-                title="Fragman" //
-                data={movie.videos.results}
-              />
-              <DetailDisplay
-                title="Kategoriler" //
-                data={movie.genres}
-              />
+              <DetailDisplay title="Kategoriler" data={movie.genres} />
               <DetailDisplay
                 title="Konuşulan Diller"
                 data={movie.spoken_languages}
@@ -90,6 +84,7 @@ const Detail = () => {
                 </span>
               </p>
             </div>
+            <Video data={[movie.videos.results[0]]} />
           </section>
 
           {/* alt */}
