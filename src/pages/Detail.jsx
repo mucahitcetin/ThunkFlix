@@ -84,7 +84,9 @@ const Detail = () => {
                 </span>
               </p>
             </div>
-            <Video data={[movie.videos.results[0]]} />
+            {movie.videos.results.length > 0 && (
+              <Video data={[movie.videos.results[0]]} />
+            )}
           </section>
 
           {/* alt */}
